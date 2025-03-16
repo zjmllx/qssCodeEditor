@@ -1,0 +1,1638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mycustomstyle</class>
+ <widget class="QWidget" name="mycustomstyle">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>768</width>
+    <height>565</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QFrame" name="fra_main">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>771</width>
+     <height>565</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(33, 33, 33);
+
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>361</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/*/* QGroupBox 样式 */
+QGroupBox {
+    background-color: #474747;
+    border: 2px solid rgb(100, 100, 100); /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    margin-top: 10px;           /* 上边距 */
+    padding-top: 10px;          /* 内部上边距 */
+    font-size: 12pt;
+    font-weight: bold;
+}
+ 
+QGroupBox::title {
+    subcontrol-origin: margin;  /* 标题位置 */
+    subcontrol-position: top center; /* 水平居中 */
+    padding: 0 4px;             /* 标题内边距 */
+	border-radius: 3px;
+    background-color: rgb(150, 150, 150);
+    color: #FFFFFF;
+}
+ 
+/* QComboBox 样式 */
+QComboBox {
+    border: 1px solid pink; /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    padding: 3px;               /* 内边距 */
+    min-width: 120px;            最小宽度
+} */</string>
+    </property>
+    <property name="title">
+     <string>菜单栏主题设置</string>
+    </property>
+    <widget class="QLabel" name="lab_menuBar_11">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>20</y>
+       <width>191</width>
+       <height>236</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>菜单栏</string>
+     </property>
+     <widget class="QLabel" name="lab_menuBar_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>34</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>背景颜色</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_tit_bgdcol">
+      <property name="geometry">
+       <rect>
+        <x>85</x>
+        <y>30</y>
+        <width>30</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_tit_fontcol">
+      <property name="geometry">
+       <rect>
+        <x>85</x>
+        <y>70</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lab_menuBar_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>74</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>字体颜色</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lab_menuBar_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>117</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>字体样式</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_tit_fontstyle">
+      <property name="geometry">
+       <rect>
+        <x>85</x>
+        <y>113</y>
+        <width>88</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+      </property>
+      <property name="text">
+       <string>AB样式</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lab_menuBar_3">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>202</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>子菜单背景颜色</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_tit_menu_bg_col">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>198</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lab_menuBar_22">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>悬浮背景</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_tit_hoverbgcol">
+      <property name="geometry">
+       <rect>
+        <x>85</x>
+        <y>158</y>
+        <width>31</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>20</y>
+       <width>151</width>
+       <height>236</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>菜单子项</string>
+     </property>
+     <widget class="QLabel" name="lab_menuBar_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>83</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>字体样式</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lab_menuBar_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>43</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>字体颜色</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_tit_menu_fontcol">
+      <property name="geometry">
+       <rect>
+        <x>83</x>
+        <y>40</y>
+        <width>30</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lab_menuBar_21">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lab_menuBar_23">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>126</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>悬浮背景</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lab_menuBar_24">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>101</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>悬浮字体颜色</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_tit_menu_fontStyle">
+      <property name="geometry">
+       <rect>
+        <x>83</x>
+        <y>80</y>
+        <width>61</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>微软雅黑</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+      </property>
+      <property name="text">
+       <string>AB样式</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_tit_menu_hoverbgcol">
+      <property name="geometry">
+       <rect>
+        <x>83</x>
+        <y>123</y>
+        <width>30</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_tit_menu_fonthovercol">
+      <property name="geometry">
+       <rect>
+        <x>113</x>
+        <y>170</y>
+        <width>30</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>10</y>
+      <width>381</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* QGroupBox 样式 */
+QGroupBox {
+    background-color: #474747;
+    border: 2px solid rgb(100, 100, 100); /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    margin-top: 10px;           /* 上边距 */
+    padding-top: 10px;          /* 内部上边距 */
+    font-size: 12pt;
+    font-weight: bold;
+}
+ 
+QGroupBox::title {
+    subcontrol-origin: margin;  /* 标题位置 */
+    subcontrol-position: top center; /* 水平居中 */
+    padding: 0 4px;             /* 标题内边距 */
+	border-radius: 3px;
+    background-color: rgb(150, 150, 150);
+    color: rgb(255, 255, 255);
+}
+ 
+/* QComboBox 样式 */
+QComboBox {
+    border: 1px solid pink; /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    padding: 3px;               /* 内边距 */
+    min-width: 120px;           /* 最小宽度 */
+}</string>
+    </property>
+    <property name="title">
+     <string>编辑器主题设置</string>
+    </property>
+    <widget class="QLabel" name="lab_menuBar_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>33</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #D7FDFF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>背景颜色</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_menuBar_9">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>83</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #D7FDFF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>字体颜色</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_menuBar_10">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #D7FDFF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>字体样式</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_edit_bgdcol">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>30</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_edit_fontcol">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>80</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_line_num_bgdcol">
+     <property name="geometry">
+      <rect>
+       <x>315</x>
+       <y>30</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_menuBar_12">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>35</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>行号背景颜色</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_menuBar_13">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>84</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>行号字体颜色</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_menuBar_14">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>128</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #00F8FF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>行号选中颜色</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_line_fontcol">
+     <property name="geometry">
+      <rect>
+       <x>315</x>
+       <y>80</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_line_sel_fontcol">
+     <property name="geometry">
+      <rect>
+       <x>315</x>
+       <y>125</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_edit_fontstyle">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>122</y>
+       <width>70</width>
+       <height>35</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    border-radius: 3px;
+    color: pink;
+}</string>
+     </property>
+     <property name="text">
+      <string>AB样式</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>280</y>
+      <width>201</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* QGroupBox 样式 */
+QGroupBox {
+    background-color: #474747;
+    border: 2px solid rgb(100, 100, 100); /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    margin-top: 10px;           /* 上边距 */
+    padding-top: 10px;          /* 内部上边距 */
+    font-size: 12pt;
+    font-weight: bold;
+}
+ 
+QGroupBox::title {
+    subcontrol-origin: margin;  /* 标题位置 */
+    subcontrol-position: top center; /* 水平居中 */
+    padding: 0 4px;             /* 标题内边距 */
+	border-radius: 3px;
+    background-color: rgb(150, 150, 150);
+    color: rgb(255, 255, 255);
+}
+ 
+/* QComboBox 样式 */
+QComboBox {
+    border: 1px solid pink; /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    padding: 3px;               /* 内边距 */
+    min-width: 120px;           /* 最小宽度 */
+}</string>
+    </property>
+    <property name="title">
+     <string>关键字高亮颜色设置</string>
+    </property>
+    <widget class="QLabel" name="lab_menuBar_15">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #E7DAFF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>主控件</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_menuBar_16">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #E7DAFF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>伪状态</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_menuBar_17">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #E7DAFF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>子控件</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_kw_main_control">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>30</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>QPushButton</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_kw_fake_states">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>70</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>:hover</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_kw_chidren_control">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>110</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>::indicator</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_kw_style_attri">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>150</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>font</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_menuBar_18">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #E7DAFF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>样式属性</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_kw_lay_attri">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>190</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>position</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_menuBar_19">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>190</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #E7DAFF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>布局属性</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_kw_opacity_attri">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>230</y>
+       <width>91</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+    color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <property name="text">
+      <string>qopacity</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lab_menuBar_20">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>230</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #E7DAFF;
+background-color: transparent;</string>
+     </property>
+     <property name="text">
+      <string>渐变属性</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btn_onlysave">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>520</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    font: 12pt &quot;宋体&quot;;
+    background-color: rgb(173, 173, 173);
+    color: rgb(85, 0, 255);
+    border: 1px solid rgb(85, 0, 255);
+    border-radius: 4px;
+}
+
+QPushButton:hover {
+    background-color: rgb(193, 193, 193); /* 悬停时的背景颜色 */
+    border: 1px solid rgb(105, 0, 255); /* 悬停时的边框颜色 */
+}
+
+QPushButton:pressed {
+    background-color: rgb(153, 153, 153); /* 按下时的背景颜色 */
+    border: 1px solid rgb(65, 0, 255); /* 按下时的边框颜色 */
+    color: rgb(255, 255, 255); /* 按下时的文字颜色 */
+}</string>
+    </property>
+    <property name="text">
+     <string>保存</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_cancel">
+    <property name="geometry">
+     <rect>
+      <x>665</x>
+      <y>520</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    font: 12pt &quot;宋体&quot;;
+    background-color: rgb(173, 173, 173);
+    color: rgb(85, 0, 255);
+    border: 1px solid rgb(85, 0, 255);
+    border-radius: 4px;
+}
+
+QPushButton:hover {
+    background-color: rgb(193, 193, 193); /* 悬停时的背景颜色 */
+    border: 1px solid rgb(105, 0, 255); /* 悬停时的边框颜色 */
+}
+
+QPushButton:pressed {
+    background-color: rgb(153, 153, 153); /* 按下时的背景颜色 */
+    border: 1px solid rgb(65, 0, 255); /* 按下时的边框颜色 */
+    color: rgb(255, 255, 255); /* 按下时的文字颜色 */
+}</string>
+    </property>
+    <property name="text">
+     <string>退出</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_onlyapply">
+    <property name="geometry">
+     <rect>
+      <x>535</x>
+      <y>480</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    font: 12pt &quot;宋体&quot;;
+    background-color: rgb(173, 173, 173);
+    color: rgb(85, 0, 255);
+    border: 1px solid rgb(85, 0, 255);
+    border-radius: 4px;
+}
+
+QPushButton:hover {
+    background-color: rgb(193, 193, 193); /* 悬停时的背景颜色 */
+    border: 1px solid rgb(105, 0, 255); /* 悬停时的边框颜色 */
+}
+
+QPushButton:pressed {
+    background-color: rgb(153, 153, 153); /* 按下时的背景颜色 */
+    border: 1px solid rgb(65, 0, 255); /* 按下时的边框颜色 */
+    color: rgb(255, 255, 255); /* 按下时的文字颜色 */
+}</string>
+    </property>
+    <property name="text">
+     <string>应用</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_save_apply">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>480</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    font: 12pt &quot;宋体&quot;;
+    background-color: rgb(173, 173, 173);
+    color: rgb(85, 0, 255);
+    border: 1px solid rgb(85, 0, 255);
+    border-radius: 4px;
+}
+
+QPushButton:hover {
+    background-color: rgb(193, 193, 193); /* 悬停时的背景颜色 */
+    border: 1px solid rgb(105, 0, 255); /* 悬停时的边框颜色 */
+}
+
+QPushButton:pressed {
+    background-color: rgb(153, 153, 153); /* 按下时的背景颜色 */
+    border: 1px solid rgb(65, 0, 255); /* 按下时的边框颜色 */
+    color: rgb(255, 255, 255); /* 按下时的文字颜色 */
+}</string>
+    </property>
+    <property name="text">
+     <string>保存并应用</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_6">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>280</y>
+      <width>151</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* QGroupBox 样式 */
+QGroupBox {
+    background-color: #474747;
+    border: 2px solid rgb(100, 100, 100); /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    margin-top: 10px;           /* 上边距 */
+    padding-top: 10px;          /* 内部上边距 */
+    font-size: 12pt;
+    font-weight: bold;
+}
+ 
+QGroupBox::title {
+    subcontrol-origin: margin;  /* 标题位置 */
+    subcontrol-position: top center; /* 水平居中 */
+    padding: 0 4px;             /* 标题内边距 */
+	border-radius: 3px;
+    background-color: rgb(150, 150, 150);
+    color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <property name="title">
+     <string>我的主题</string>
+    </property>
+    <widget class="QPushButton" name="btn_line_num_bgdcol_3">
+     <property name="geometry">
+      <rect>
+       <x>315</x>
+       <y>30</y>
+       <width>41</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 3px;
+color: pink;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_line_fontcol_3">
+     <property name="geometry">
+      <rect>
+       <x>315</x>
+       <y>80</y>
+       <width>41</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 3px;
+color: pink;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_line_sel_fontcol_3">
+     <property name="geometry">
+      <rect>
+       <x>315</x>
+       <y>130</y>
+       <width>41</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 3px;
+color: pink;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QListView" name="listView">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>30</y>
+       <width>141</width>
+       <height>195</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>宋体</family>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QListView {
+outline: none;
+background-color: #474747;
+border: 1px solid #313438;
+border-radius: 5px;
+}
+
+QListView::item {
+border-bottom: 1px solid rgb(100, 100, 100);
+border-radius: 3px;
+color: rgb(255, 255, 255);
+}
+
+QListView::item:selected {
+    background: #8BA19F;
+    color: yellow;
+}
+
+QListView::item:hover {
+    background: #657574;
+}
+QLineEdit {
+border: none;
+background: #8BA19F;
+color: white;
+}
+QScrollBar:vertical {
+    border: none;
+    background: #E0E0E0;
+    width: 8px;
+    margin: 0px;
+    border-radius: 3px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #BDBDBD;
+    min-height: 20px;
+    border-radius: 3px;
+}
+
+QScrollBar::add-line:vertical {
+    background: none;
+    height: 0px;
+}
+
+QScrollBar::sub-line:vertical {
+    background: none;
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical {
+    background: none;
+}
+
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: none;
+    background: #E0E0E0;
+    height: 8px;
+    margin: 0px;
+    border-radius: 3px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #BDBDBD;
+    min-width: 20px;
+    border-radius: 3px;
+}
+
+QScrollBar::add-line:horizontal {
+    background: none;
+    width: 0px;
+}
+
+QScrollBar::sub-line:horizontal {
+    background: none;
+    width: 0px;
+}
+
+QScrollBar::add-page:horizontal {
+    background: none;
+}
+
+QScrollBar::sub-page:horizontal {
+    background: none;
+}</string>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="showDropIndicator" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="modelColumn">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_preview_theme">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>230</y>
+       <width>60</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    font: 12pt &quot;宋体&quot;;
+    background-color: rgb(173, 173, 173);
+    color: rgb(85, 0, 255);
+    border: 1px solid rgb(85, 0, 255);
+    border-radius: 4px;
+}
+
+QPushButton:hover {
+    background-color: rgb(193, 193, 193); /* 悬停时的背景颜色 */
+    border: 1px solid rgb(105, 0, 255); /* 悬停时的边框颜色 */
+}
+
+QPushButton:pressed {
+    background-color: rgb(153, 153, 153); /* 按下时的背景颜色 */
+    border: 1px solid rgb(65, 0, 255); /* 按下时的边框颜色 */
+    color: rgb(255, 255, 255); /* 按下时的文字颜色 */
+}</string>
+     </property>
+     <property name="text">
+      <string>预览</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="fra_preview">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>190</y>
+      <width>380</width>
+      <height>277</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QWidget" name="wid_pre_titleBar" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>385</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <widget class="QPushButton" name="btn_pre_file">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>3</y>
+        <width>40</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>文件</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_pre_edit">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>3</y>
+        <width>40</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>编辑</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="fra_pre_viewArea">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>380</width>
+       <height>247</height>
+      </rect>
+     </property>
+     <property name="sizeIncrement">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btn_resume">
+    <property name="geometry">
+     <rect>
+      <x>535</x>
+      <y>520</y>
+      <width>90</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    font: 12pt &quot;宋体&quot;;
+    background-color: rgb(173, 173, 173);
+    color: rgb(85, 0, 255);
+    border: 1px solid rgb(85, 0, 255);
+    border-radius: 4px;
+}
+
+QPushButton:hover {
+    background-color: rgb(193, 193, 193); /* 悬停时的背景颜色 */
+    border: 1px solid rgb(105, 0, 255); /* 悬停时的边框颜色 */
+}
+
+QPushButton:pressed {
+    background-color: rgb(153, 153, 153); /* 按下时的背景颜色 */
+    border: 1px solid rgb(65, 0, 255); /* 按下时的边框颜色 */
+    color: rgb(255, 255, 255); /* 按下时的文字颜色 */
+}</string>
+    </property>
+    <property name="text">
+     <string>恢复主题</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

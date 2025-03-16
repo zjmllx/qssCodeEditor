@@ -1,0 +1,24 @@
+{
+  "QFrame": {
+    "background-color": "#E1F2F7"
+  },
+  "QLabel": {
+    "background-color": "#FBFFFD",
+    "color": "black",
+    "border-radius": "5px"
+  },
+  "QPushButton": {
+    "border": "none",
+    "border-radius": "5px",
+    "padding": "0px",
+    "background-color": "#FBFFFD",
+    "color": "black"
+  },
+  "QPushButton:hover": {
+    "background-color": "#BBC3CC",
+    "border-color": "#545C5E"
+  },
+  "QPushButton:pressed": {
+    "background": "#879396"
+  }
+}

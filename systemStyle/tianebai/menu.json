@@ -1,0 +1,33 @@
+{
+  "QMenu": {
+    "background": "#EEFCFF",
+    "border": "2px solid #566266",
+    "border-radius": "10px",
+    "font-size": "10pt",
+    "padding": "2px",
+    "font-family": "华文中宋"
+  },
+  "QMenu::item": {
+    "background-color": "transparent",
+    "color": "#1455FF",
+    "min-width": "100px",
+    "min-height": "30px",
+    "padding-left": "5px",
+    "border-radius": "10px",
+    "padding-right": "20px"
+  },
+  "QMenu::item:selected": {
+    "background-color": "#737475",
+    "color": "#F0F0F0"
+  },
+  "QMenu::separator": {
+    "height": "1px",
+    "background": "#c8d6e5",
+    "margin": "5px 0"
+  },
+  "QMenu::icon": {
+    "width": "16px",
+    "height": "16px",
+    "margin-left": "10px"
+  }
+}

@@ -1,0 +1,304 @@
+/* 全局样式 */
+QWidget {
+    background-color: gray;
+    font-family: "Arial";
+    font-size: 12px;
+}
+
+/* QTextBrowser 样式 */
+QTextBrowser {
+    background-color: pink;
+}
+
+/* QRadioButton 样式 */
+QRadioButton {
+    spacing: 5px;
+    color: blue;
+}
+
+QPushButton {
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 3px;
+	color: blue;
+}
+
+QPushButton:hover {
+    background-color: #e6f3ff;
+    border-color: #2196F3;
+}
+
+QPushButton:pressed {
+    background-color: #ccebff;
+}
+
+/* QToolButton 样式 */
+QToolButton {
+    background-color: lightgray;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 3px;
+	color: blue;
+}
+
+QToolButton:hover {
+    background-color: #e6f3ff;
+    border-color: #2196F3;
+}
+
+QToolButton:pressed {
+    background-color: #ccebff;
+}
+
+/* QLineEdit 样式 */
+QLineEdit {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 3px;
+    min-width: 100px;
+}
+
+QLineEdit:focus {
+    border-color: #2196F3;
+    outline: none;
+}
+
+/* QCheckBox 样式 */
+QCheckBox {
+    spacing: 5px;
+    color: #333333;
+}
+
+/* QGroupBox 样式 */
+QGroupBox {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+/* QFrame 样式 */
+QFrame {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: gray;
+}
+
+/* 第二页 */
+
+
+/* QGroupBox 样式 */
+QGroupBox {
+    border: 1px solid #cccccc; /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    margin-top: 10px;           /* 上边距 */
+    padding-top: 10px;          /* 内部上边距 */
+}
+ 
+QGroupBox::title {
+    subcontrol-origin: margin;  /* 标题位置 */
+    left: 10px;                 /* 标题偏移 */
+    padding: 0 4px;             /* 标题内边距 */
+}
+ 
+/* QComboBox 样式 */
+QComboBox {
+    border: 1px solid pink; /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    padding: 3px;               /* 内边距 */
+    min-width: 120px;           /* 最小宽度 */
+}
+	
+/* QDataEdit 样式 */
+QDataEdit {                     /* 数据编辑框 */
+    background-color: pink; /* 背景颜色 */
+    border: 1px solid pink; /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    padding: 3px;               /* 内边距 */
+}
+ 
+/* QTimeEdit 样式 */
+QTimeEdit {                     /* 时间编辑框 */
+    border: 1px solid #cccccc; /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    padding: 3px;               /* 内边距 */
+}
+ 
+/* QDataTimeEdit 样式 */
+QDataTimeEdit {                 /* 数据时间编辑框 */
+    background-color: #ffffff; /* 背景颜色 */
+    border: 1px solid pink; /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    padding: 3px;               /* 内边距 */
+}
+ 
+/* QDoubleSpinBox 样式 */
+QDoubleSpinBox {                /* 双精度-spinner 控件 */
+    border: 1px solid #cccccc; /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    padding: 3px;               /* 内边距 */
+}
+ 
+QDoubleSpinBox::up-button, QDoubleSpinBox::down-button {
+    width: 15px;               /* 上下按钮宽度 */
+    height: 15px;              /* 上下按钮高度 */
+}
+ 
+/* QFontComboBox 样式 */
+QFontComboBox {                 /* 字体选择器 */
+    border: 1px solid #cccccc; /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    padding: 3px;               /* 内边距 */
+}
+ 
+/* QLineEdit 样式 */
+QLineEdit {                     /* 文本输入框 */
+    border: 1px solid #cccccc; /* 边框颜色 */
+    border-radius: 4px;         /* 圆角 */
+    padding: 3px;               /* 内边距 */
+}
+ 
+QLineEdit:focus {
+    border-color: #2196F3;     /* 焦点时边框颜色 */
+    outline: none;              /* 移除默认焦点轮廓 */
+}
+ 
+/* QSlider 样式 */
+QSlider::groove:horizontal {
+    height: 8px;               /* 槽的高度 */
+    border-radius: 4px;
+	background-color: #cccccc; /* 槽的背景颜色 */
+}
+ 
+/* QScrollBar 样式 */
+QScrollBar:vertical {
+	background: #A8A8A5;
+    width: 10px;
+	border-radius: 2px;
+}
+
+QScrollBar::handle:vertical {
+    background: #EDEDE8;
+    min-height: 20px;
+    border-radius: 5px; /* 圆角 */
+}
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background: transparent;
+    height: 0px;            
+}
+	
+QScrollBar:horizontal {
+	background: #A8A8A5;
+    height: 10px;
+	border-radius: 2px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #EDEDE8;
+    min-height: 20px;
+    border-radius: 5px; /* 圆角 */
+}
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    background: transparent;
+    height: 0px;            
+}
+
+QDial { background: pink; }
+	
+QTextEdit, QPlainTextEdit {
+    background: #B0B0B0;    /* 背景色 */
+    border: 2px solid #CCCCCC;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: "楷体";
+    font-size: 18px;
+    color: white;
+}
+
+/* 聚焦时的边框颜色 */
+QTextEdit:focus, QPlainTextEdit:focus {
+    border: 2px solid #4A90E2;
+}
+QCalendarWidget {
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+}
+
+/* 标题栏（月份显示区域） */
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background: #F0F0F0;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+/* 月份/年份按钮 */
+QCalendarWidget QToolButton {
+    background: transparent;
+    font-size: 14px;
+    color: #333333;
+}
+QTextBrowser {
+    background: #C5CFFF;
+    border: 2px solid #CCCCCC;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: "Arial";
+    font-size: 12px;
+    color: #27FF09;
+}
+QProgressBar {
+    background: #E0E0E0;       /* 背景色 */
+    border: 2px solid #A0A0A0;
+    border-radius: 5px;       /* 圆角 */
+    text-align: center;       /* 文本居中 */
+    font-size: 12px;
+    color: #404040;           /* 文本颜色 */
+}
+
+QProgressBar::chunk {         /* 进度块 */
+    background: #4A90E2;      /* 进度颜色 */
+    border-radius: 3px;        /* 与父控件圆角匹配 */
+    margin: 1px;              /* 边距（避免溢出边框） */
+}
+
+QLCDNumber {
+    background: #4D4C4C;      /* 背景色 */
+    color: #4A90E2;           /* 数字颜色（激活段） */
+    border: 1px solid pink;
+    border-radius: 5px;
+    padding: 4px;
+}
+/* 通用样式 */
+QTreeView, QTableView, QListView, QColumnView {
+    background: light;
+    border: 1px solid #CCCCCC;
+    alternate-background-color: #F8F8F8;
+    outline: 0;
+}
+
+/* 表头 */
+QHeaderView::section {
+    background: light;
+    border: 1px solid;
+    padding: 4px 8px;
+}
+
+/* 表格选中项 */
+QTableView::item:selected {
+    background: #989E97;
+    color: #DBFCED;
+}
+
+/* 列表选中项 */
+QListView::item:selected {
+    background: #5D615C;
+}
+QColumnView::item:selected {
+    background: #5D615C;
+}
+QTreeView::item:selected {
+    background: #5D615C;
+}

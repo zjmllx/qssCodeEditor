@@ -1,0 +1,32 @@
+<RCC>
+    <qresource prefix="/style">
+        <file>systemStyle/lanzifen/codeeditor.json</file>
+        <file>systemStyle/lanzifen/framecompo.json</file>
+        <file>systemStyle/lanzifen/menu.json</file>
+        <file>systemStyle/lanzifen/splittercompo.json</file>
+        <file>systemStyle/lanzifen/topBar.json</file>
+        <file>systemStyle/moyuhei/codeeditor.json</file>
+        <file>systemStyle/moyuhei/framecompo.json</file>
+        <file>systemStyle/moyuhei/menu.json</file>
+        <file>systemStyle/moyuhei/splittercompo.json</file>
+        <file>systemStyle/moyuhei/topBar.json</file>
+        <file>systemStyle/qianbaihui/codeeditor.json</file>
+        <file>systemStyle/qianbaihui/framecompo.json</file>
+        <file>systemStyle/qianbaihui/menu.json</file>
+        <file>systemStyle/qianbaihui/splittercompo.json</file>
+        <file>systemStyle/qianbaihui/topBar.json</file>
+        <file>systemStyle/tianebai/codeeditor.json</file>
+        <file>systemStyle/tianebai/framecompo.json</file>
+        <file>systemStyle/tianebai/menu.json</file>
+        <file>systemStyle/tianebai/splittercompo.json</file>
+        <file>systemStyle/tianebai/topBar.json</file>
+        <file>systemStyle/lanzifen/highlightwk.json</file>
+        <file>systemStyle/lanzifen/lineNumber.json</file>
+        <file>systemStyle/moyuhei/highlightwk.json</file>
+        <file>systemStyle/moyuhei/lineNumber.json</file>
+        <file>systemStyle/tianebai/highlightwk.json</file>
+        <file>systemStyle/tianebai/lineNumber.json</file>
+        <file>systemStyle/qianbaihui/highlightwk.json</file>
+        <file>systemStyle/qianbaihui/lineNumber.json</file>
+    </qresource>
+</RCC>

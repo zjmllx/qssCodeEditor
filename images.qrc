@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>images/about.png</file>
+        <file>images/edit.png</file>
+        <file>images/file.png</file>
+        <file>images/fileerror.png</file>
+        <file>images/help.png</file>
+        <file>images/openfile.png</file>
+        <file>images/savefile.png</file>
+        <file>images/setting.png</file>
+        <file>images/stopfile.png</file>
+        <file>images/app.png</file>
+        <file>images/font.png</file>
+        <file>images/platte.png</file>
+        <file>images/theme.png</file>
+        <file>images/about_we.png</file>
+    </qresource>
+    <qresource prefix="/image_edit">
+        <file>img_edit/back.png</file>
+        <file>img_edit/copy.png</file>
+        <file>img_edit/cutting.png</file>
+        <file>img_edit/next.png</file>
+        <file>img_edit/paste.png</file>
+        <file>img_edit/select_all.png</file>
+        <file>img_edit/find.png</file>
+    </qresource>
+</RCC>

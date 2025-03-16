@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/config">
+        <file>style.txt</file>
+        <file>wordlist.txt</file>
+        <file>currentTheme.ini</file>
+    </qresource>
+</RCC>

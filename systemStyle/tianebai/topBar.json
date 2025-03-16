@@ -1,0 +1,23 @@
+{
+  "QWidget": {
+    "background-color": "#EAF4FF"
+  },
+  "QPushButton": {
+    "border": "none",
+    "border-radius": "5px",
+    "padding": "0px",
+    "background-color": "#EAF4FF",
+    "color": "black"
+  },
+  "QPushButton:hover": {
+    "background-color": "#BBC3CC",
+    "border-color": "#545C5E"
+  },
+  "QPushButton:pressed": {
+    "background": "#879396"
+  },
+  "QPushButton::menu-indicator": {
+    "image": "none",
+    "width": "0px"
+  }
+}
