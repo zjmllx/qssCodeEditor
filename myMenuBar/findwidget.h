@@ -7,6 +7,7 @@
 #include "../myEditor/codeeditor.h"
 #include<QDialog>
 #include<QCheckBox>
+
 class FindWidget : public QDialog
 {
     Q_OBJECT

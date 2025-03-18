@@ -1,18 +1,20 @@
 #include "config.h"
 #include <QFile>
-#include <QDebug>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QCoreApplication>
 
 Config::Config()
 {
     this->curThemeConfig = this->getCurrentThemeConfig(":/config/currentTheme.ini");
+    this->projectPath = this->getProjectIniPath();
+    this->iniPath = this->projectPath.filePath("currentTheme.ini");
+    currentThemeName = curThemeConfig.currentThemeName;
     this->setCurrentConfigInfo();
 }
 
 void Config::setCurrentConfigInfo()
 {
-    currentThemeName = curThemeConfig.currentThemeName;
     topBarJson_qss = JsonParse::getJsonParse()->parseThemeJsonFromFile(
         this->curThemeConfig.curThemePath["currentTheme_topBar"]);
     menuJson_qss = JsonParse::getJsonParse()->parseThemeJsonFromFile(
@@ -25,8 +27,7 @@ void Config::setCurrentConfigInfo()
         this->curThemeConfig.curThemePath["currentTheme_splittercompo"]);
 
     lineNumberColor = JsonParse::getJsonParse()->parseLineNumberJsonGetAllColor(
-        this->curThemeConfig.curThemePath["lineNumber_style"],
-        this->curThemeConfig.currentThemeName);
+        this->curThemeConfig.curThemePath["lineNumber_style"]);
     KWHighlighterData = JsonParse::getJsonParse()->parseHighlighterColorsFromFile(
         this->curThemeConfig.curThemePath["highlightwk_color"]);
 }
@@ -49,7 +50,7 @@ void Config::setCignoBlankaStyle()
     this->curThemeConfig.curThemePath["lineNumber_style"] = ":/style/systemStyle/tianebai/lineNumber.json";
 
     this->setCurrentConfigInfo();
-    this->updataCurrentThemeStyle();
+    this->updateCurrentThemeStyle();
 }
 
 // 蓝紫粉主题
@@ -64,7 +65,7 @@ void Config::setLanFenZiStyle()
     this->curThemeConfig.curThemePath["highlightwk_color"] = ":/style/systemStyle/lanzifen/highlightwk.json";
     this->curThemeConfig.curThemePath["lineNumber_style"] = ":/style/systemStyle/lanzifen/lineNumber.json";
     this->setCurrentConfigInfo();
-    this->updataCurrentThemeStyle();
+    this->updateCurrentThemeStyle();
 }
 
 // 墨玉黑主题
@@ -79,7 +80,7 @@ void Config::setMoYuHeiStyle()
     this->curThemeConfig.curThemePath["highlightwk_color"] = ":/style/systemStyle/moyuhei/highlightwk.json";
     this->curThemeConfig.curThemePath["lineNumber_style"] = ":/style/systemStyle/moyuhei/lineNumber.json";
     this->setCurrentConfigInfo();
-    this->updataCurrentThemeStyle();
+    this->updateCurrentThemeStyle();
 }
 
 // 浅白灰主题
@@ -94,7 +95,7 @@ void Config::setQianBaiHuiStyle()
     this->curThemeConfig.curThemePath["highlightwk_color"] = ":/style/systemStyle/qianbaihui/highlightwk.json";
     this->curThemeConfig.curThemePath["lineNumber_style"] = ":/style/systemStyle/qianbaihui/lineNumber.json";
     this->setCurrentConfigInfo();
-    this->updataCurrentThemeStyle();
+    this->updateCurrentThemeStyle();
 }
 
 void Config::setLineNumberStyle(CodeEditor *codeEditor, const QColor &selectedColor, const QColor &noSelectedColor, const QColor &backgroundColor)
@@ -157,17 +158,48 @@ void Config::resumeDefaultText()
     }
 }
 
-void Config::updataAllKWHighlight()
+void Config::updateAllKWHighlight(Highlighter *highlighter)
 {
-    if(this->highlighter){
-        this->highlighter->setWidgetFormat_color(KWHighlighterData.highlighterColors["widgetFormat_color"]);
-        this->highlighter->setPseudoStateFormat_color(KWHighlighterData.highlighterColors["pseudoStateFormat_color"]);
-        this->highlighter->setSubControlFormat_color(KWHighlighterData.highlighterColors["subControlFormat_color"]);
-        this->highlighter->setPropertyFormat_color(KWHighlighterData.highlighterColors["propertyFormat_color"]);
-        this->highlighter->setLayoutFormat_color(KWHighlighterData.highlighterColors["layoutFormat_color"]);
-        this->highlighter->setGradientFormat_color(KWHighlighterData.highlighterColors["gradientFormat_color"]);
-        this->highlighter->setCommentFormat_color(KWHighlighterData.highlighterColors["commentFormat_color"]);
+    if(highlighter){
+        highlighter->setWidgetFormat_color(KWHighlighterData.highlighterColors["widgetFormat_color"]);
+        highlighter->setPseudoStateFormat_color(KWHighlighterData.highlighterColors["pseudoStateFormat_color"]);
+        highlighter->setSubControlFormat_color(KWHighlighterData.highlighterColors["subControlFormat_color"]);
+        highlighter->setPropertyFormat_color(KWHighlighterData.highlighterColors["propertyFormat_color"]);
+        highlighter->setLayoutFormat_color(KWHighlighterData.highlighterColors["layoutFormat_color"]);
+        highlighter->setGradientFormat_color(KWHighlighterData.highlighterColors["gradientFormat_color"]);
+        highlighter->setCommentFormat_color(KWHighlighterData.highlighterColors["commentFormat_color"]);
     }
+}
+
+void Config::updateCurrentThemeStyle()
+{
+    if(this->topBar){
+        //设置样式
+        this->topBar->setStyleSheet(topBarJson_qss.themeQssData);
+        this->topBar->setTopBarBtnToMenuStyle(menuJson_qss.themeQssData);
+    }
+    if(this->codeEditor){
+        this->codeEditor->setStyleSheet(codeEditorJson_qss.themeQssData);
+        this->setLineNumberStyle(this->codeEditor,lineNumberColor.selectedColor,
+                                 lineNumberColor.noSelectedColor,
+                                 lineNumberColor.backgroundColor);
+    }
+    if(this->frame){
+        this->frame->setStyleSheet(framecompoJson_qss.themeQssData);
+    }
+    if(this->splitter){
+        this->splitter->setStyleSheet(splittercompoJson_qss.themeQssData);
+    }
+    this->updateAllKWHighlight(this->highlighter);
+
+    // qDebug() << "config:" << this->curThemeConfig.currentThemeName;
+    // qDebug() << "curtheme:" << this->currentThemeName;
+
+    if(this->currentThemeName != this->curThemeConfig.currentThemeName){
+        this->currentThemeName = this->curThemeConfig.currentThemeName;
+        this->updateCurrentThemeConfig(this->iniPath, this->curThemeConfig);
+    }
+    // qDebug() << "curtheme:" << this->curThemeConfig.currentThemeName;
 }
 
 CurrentThemeConfig Config::getCurrentThemeConfig(const QString &filePath)
@@ -188,28 +220,6 @@ CurrentThemeConfig Config::getCurrentThemeConfig(const QString &filePath)
     return config;
 }
 
-void Config::updataCurrentThemeStyle()
-{
-    if(this->topBar){
-        //设置样式
-        this->topBar->setStyleSheet(topBarJson_qss.themeQssData);
-        this->topBar->setTopBarBtnToMenuStyle(menuJson_qss.themeQssData);
-    }
-    if(this->codeEditor){
-        this->codeEditor->setStyleSheet(codeEditorJson_qss.themeQssData);
-        this->setLineNumberStyle(this->codeEditor,lineNumberColor.selectedColor,
-                                 lineNumberColor.noSelectedColor,
-                                 lineNumberColor.backgroundColor);
-    }
-    if(this->frame){
-        this->frame->setStyleSheet(framecompoJson_qss.themeQssData);
-    }
-    if(this->splitter){
-        this->splitter->setStyleSheet(splittercompoJson_qss.themeQssData);
-    }
-    this->updataAllKWHighlight();
-}
-
 void Config::updateCurrentThemeConfig(const QString &filePath, const CurrentThemeConfig &config)
 {
     QSettings settings(filePath, QSettings::IniFormat);
@@ -221,6 +231,14 @@ void Config::updateCurrentThemeConfig(const QString &filePath, const CurrentThem
         settings.setValue(it.key(), it.value());
     }
     settings.endGroup();
+}
+
+QDir Config::getProjectIniPath()
+{
+    QDir dir(QDir::currentPath());
+    dir.cdUp();
+    dir.cdUp();
+    return dir;
 }
 
 QFontDialog* Config::openFontDialog(QWidget *parent)

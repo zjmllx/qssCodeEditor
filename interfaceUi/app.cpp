@@ -2,6 +2,7 @@
 #include "../myEditor/highlighter.h"
 #include "../myMenuBar/findwidget.h"
 #include "../config.h"
+#include "../customDialog/myCustomStyle/mycustomstyle.h"
 
 #include <QBoxLayout>
 #include <QLabel>
@@ -136,7 +137,7 @@ App::App(QWidget *parent) :
 
     //传递editor对象，实现tolbar功能
     tolBar->getEditor(editor);
-    Config::config()->updataCurrentThemeStyle();
+    Config::config()->updateCurrentThemeStyle();
     Config::config()->resumeDefaultText();
 }
 
@@ -159,7 +160,6 @@ void App::resizeEvent(QResizeEvent *event)
 void App::closeEvent(QCloseEvent *event)
 {
     if(tolBar->customstyle){
-        qDebug()<<"关闭";
         tolBar->customstyle->close();
         tolBar->customstyle->deleteLater();
 

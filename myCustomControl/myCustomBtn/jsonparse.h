@@ -32,7 +32,7 @@ public:
     QColor parseHighlightWKJson(const QString &filePath, const QString &colorType);
 
     QJsonObject getJsonOBJFromFile(const QString &filePath);
-    LineNumberColor parseLineNumberJsonGetAllColor(const QString &filePath, const QString &colorSet);
+    LineNumberColor parseLineNumberJsonGetAllColor(const QString &filePath);
     HighlighterData parseHighlighterColorsFromFile(const QString &filePath);
 
 

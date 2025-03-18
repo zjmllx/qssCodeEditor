@@ -5,8 +5,11 @@
 #include <QPushButton>
 #include <QMenu>
 
-#include "../customDialog/myCustomStyle/mycustomstyle.h"
 #include "../myEditor/codeeditor.h"
+
+QT_BEGIN_NAMESPACE
+class MyCustomStyle;
+QT_END_NAMESPACE
 
 class MyMenu : public QMenu
 {

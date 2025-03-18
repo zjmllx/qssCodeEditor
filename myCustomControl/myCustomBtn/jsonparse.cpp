@@ -29,9 +29,9 @@ QString JsonParse::parseThemeJsontoQss(const QString &jsonConten)
 
     // 遍历 JSON 键值对，构建 QSS
     for (QString &key : jsonObj.keys()) {
-        QJsonObject style = jsonObj[key/*.remove(QRegularExpression("\\d"))*/].toObject();
+        QJsonObject style = jsonObj[key].toObject();
         qss += key + " {\n";
-        for (const QString &attr : style.keys()) {
+        foreach (const QString &attr , style.keys()) {
             qss += "    " + attr + ": " + style[attr].toString() + ";\n";
         }
         qss += "}\n";
@@ -45,7 +45,7 @@ ParseThemeData JsonParse::parseThemeJsonFromFile(const QString &jsonFilePath)
     ParseThemeData themeData;
     QFile file(jsonFilePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qWarning() << "无法打开 JSON 文件：" << jsonFilePath;
+        // qWarning() << "无法打开 JSON 文件：" << jsonFilePath;
         return themeData;
     }
 
@@ -60,10 +60,10 @@ ParseThemeData JsonParse::parseThemeJsonFromFile(const QString &jsonFilePath)
 
 QString JsonParse::qssToJson(const QString &qss)
 {
-    QJsonObject jsonObj;
-    QRegularExpression re(R"((\S+)\s*\{([^}]*)\})");
-    QRegularExpression reProperty(R"((\S+)\s*:\s*([^;]+);?)");
+    static const QRegularExpression re(R"((\S+)\s*\{([^}]*)\})");
+    static const QRegularExpression reProperty(R"((\S+)\s*:\s*([^;]+);?)");
 
+    QJsonObject jsonObj;
     QRegularExpressionMatchIterator i = re.globalMatch(qss);
     while (i.hasNext()) {
         QRegularExpressionMatch match = i.next();
@@ -93,7 +93,7 @@ QColor JsonParse::parseHighlightWKJson(const QString &filePath, const QString &c
 
     // 检查是否存在所需的颜色类型
     if (!rootObj.contains(colorType) || !rootObj[colorType].isObject()) {
-        qWarning() << "颜色类型不存在:" << colorType;
+        // qWarning() << "颜色类型不存在:" << colorType;
         return QColor();
     }
 
@@ -114,7 +114,7 @@ QJsonObject JsonParse::getJsonOBJFromFile(const QString &filePath)
 {
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qWarning() << "无法打开文件:" << filePath;
+        // qWarning() << "无法打开文件:" << filePath;
         return QJsonObject();  // 返回空对象
     }
 
@@ -125,7 +125,7 @@ QJsonObject JsonParse::getJsonOBJFromFile(const QString &filePath)
     QJsonParseError parseError;
     QJsonDocument doc = QJsonDocument::fromJson(jsonData, &parseError);
     if (parseError.error != QJsonParseError::NoError) {
-        qWarning() << "JSON 解析错误:" << parseError.errorString();
+        // qWarning() << "JSON 解析错误:" << parseError.errorString();
         return QJsonObject();
     }
 
@@ -133,37 +133,48 @@ QJsonObject JsonParse::getJsonOBJFromFile(const QString &filePath)
     return doc.object();
 }
 
-LineNumberColor JsonParse::parseLineNumberJsonGetAllColor(const QString &filePath, const QString &colorSet)
+LineNumberColor JsonParse::parseLineNumberJsonGetAllColor(const QString &filePath)
 {
     LineNumberColor color;
 
-    QJsonObject rootObj = this->getJsonOBJFromFile(filePath);
+    // 从文件读取 JSON 数据
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        // qWarning() << "无法打开文件:" << filePath;
+        return color;
+    }
+    QByteArray jsonData = file.readAll();
+    file.close();
 
-    // 检查是否包含指定的颜色集
-    if (!rootObj.contains(colorSet) || !rootObj[colorSet].isObject()) {
-        return color;  // 返回默认的 LineNumberColor 结构体（未找到指定颜色集）
+    QJsonParseError parseError;
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonData, &parseError);
+    if (parseError.error != QJsonParseError::NoError) {
+        // qWarning() << "JSON解析错误:" << parseError.errorString();
+        return color;
     }
 
-    QJsonObject colorObj = rootObj[colorSet].toObject();
+    QJsonObject rootObj = jsonDoc.object();
 
-    // 辅助函数：从 JSON 对象中提取 QColor
+    // 辅助lambda函数：从 JSON 对象中提取 QColor，如果缺少 alpha，默认设为255
     auto getColorFromJson = [](const QJsonObject &obj, const QString &key) -> QColor {
         if (obj.contains(key) && obj[key].isObject()) {
-            QJsonObject colorValue = obj[key].toObject();
-            int r = colorValue["r"].toInt(0);
-            int g = colorValue["g"].toInt(0);
-            int b = colorValue["b"].toInt(0);
-            int a = colorValue["a"].toInt(255);  // 默认 alpha 值为 255
+            QJsonObject colorObj = obj[key].toObject();
+            int r = colorObj["r"].toInt(0);
+            int g = colorObj["g"].toInt(0);
+            int b = colorObj["b"].toInt(0);
+            int a = colorObj.contains("a") ? colorObj["a"].toInt(255) : 255;
             return QColor(r, g, b, a);
         }
-        return QColor();  // 返回默认颜色（透明）
+        return QColor();
     };
-    // 设置结构体中的颜色
-    QJsonDocument jsonDoc(rootObj);
+
+    // 将整个 JSON 文档以格式化字符串保存到结构体中（可选）
     color.jsonData = QString::fromUtf8(jsonDoc.toJson(QJsonDocument::Indented));
-    color.selectedColor = getColorFromJson(colorObj, "selectedColor");
-    color.noSelectedColor = getColorFromJson(colorObj, "noSelectedColor");
-    color.backgroundColor = getColorFromJson(colorObj, "backgroundColor");
+
+    // 提取对应的颜色
+    color.selectedColor = getColorFromJson(rootObj, "selectedColor");
+    color.noSelectedColor = getColorFromJson(rootObj, "noSelectedColor");
+    color.backgroundColor = getColorFromJson(rootObj, "backgroundColor");
 
     return color;
 }

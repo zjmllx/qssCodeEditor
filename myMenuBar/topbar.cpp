@@ -92,7 +92,7 @@ TopBar::TopBar(QWidget *parent)
     QAction *act_theme = new QAction("主题");
     QAction *act_increaseFontSize = new QAction("增大字号");
     QAction *act_decreaseFontSize = new QAction("减小字号");
-    QAction *act_reLoadDefaultText = new QAction("重新加载默认样式");
+    QAction *act_reLoadDefaultText = new QAction("重新加载默认样式文本");
     QAction *act_resetDefaults = new QAction("恢复默认设置");
 
     act_theme->setShortcut(QKeySequence("Ctrl+T")); // 使用 Ctrl + T 键
@@ -291,6 +291,18 @@ void TopBar::loadDefaultText()
 void TopBar::onResetDefaults() {
     Config::config()->setLanFenZiStyle();
     Config::config()->resumeDefaultText();
+    CurrentThemeConfig cfg;
+    // 设置主题名称
+    cfg.currentThemeName = "蓝紫粉";
+     // 配置各部分的 JSON 文件路径
+    cfg.curThemePath["currentTheme_codeeditor"] = ":/style/systemStyle/lanzifen/codeeditor.json";
+    cfg.curThemePath["currentTheme_framecompo"] = ":/style/systemStyle/lanzifen/framecompo.json";
+    cfg.curThemePath["currentTheme_menu"] = ":/style/systemStyle/lanzifen/menu.json";
+    cfg.curThemePath["currentTheme_splittercompo"] = ":/style/systemStyle/lanzifen/splittercompo.json";
+    cfg.curThemePath["currentTheme_topBar"] = ":/style/systemStyle/lanzifen/topBar.json";
+    cfg.curThemePath["highlightwk_color"] = ":/style/systemStyle/lanzifen/highlightwk.json";
+    cfg.curThemePath["lineNumber_style"] = ":/style/systemStyle/lanzifen/lineNumber.json";
+    Config::config()->updateCurrentThemeConfig(Config::config()->iniPath, cfg);
 }
 
 void TopBar::onSelectSwanWhite() {

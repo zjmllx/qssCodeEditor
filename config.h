@@ -6,15 +6,16 @@
 #include <QSettings>
 #include <QFontDialog>
 
-#include "myMenuBar/topbar.h"
 #include "myMenuBar/mytolbtn.h"
 #include "myEditor/codeeditor.h"
 #include "myEditor/highlighter.h"
 #include "myCustomControl/myCustomBtn/jsonparse.h"
+#include "myMenuBar/topbar.h"
 
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QJsonDocument>
+#include <QDir>
 
 struct CurrentThemeConfig
 {
@@ -36,7 +37,10 @@ public:
 
     void getMainHighlighter(Highlighter *highlighter);
 
-    QString currentThemeName;
+    QString currentThemeName; // 当前主题名
+    QDir projectPath; // 当前工程目录
+    QDir getProjectIniPath();
+    QString iniPath; // 主题文件路径
 
 private:
     TopBar* topBar;
@@ -51,7 +55,7 @@ public:
     CurrentThemeConfig getCurrentThemeConfig(const QString &filePath);
     void setCurrentConfigInfo();
     void updateCurrentThemeConfig(const QString &filePath, const CurrentThemeConfig &config);
-    void updataCurrentThemeStyle();
+    void updateCurrentThemeStyle();
 
     void setCignoBlankaStyle(); // 天鹅白主题样式
     void setLanFenZiStyle();  // 蓝粉紫主题样式
@@ -64,7 +68,7 @@ public:
                             const QColor &backgroundColor);   // 设置行号样式
 
     void resumeDefaultText();  // 恢复默认的文字
-    void updataAllKWHighlight();
+    void updateAllKWHighlight(Highlighter *highlighter);
 
     QFontDialog* openFontDialog(QWidget *parent = nullptr);
     static Config* config();

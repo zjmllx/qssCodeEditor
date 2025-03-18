@@ -222,7 +222,7 @@ background-color: transparent;</string>
        <string>字体样式</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="btn_tit_fontstyle">
+     <widget class="QPushButton" name="btn_tit_fontStyle">
       <property name="geometry">
        <rect>
         <x>85</x>
@@ -1140,9 +1140,9 @@ background-color: transparent;</string>
    <widget class="QPushButton" name="btn_onlysave">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>550</x>
       <y>520</y>
-      <width>90</width>
+      <width>71</width>
       <height>30</height>
      </rect>
     </property>
@@ -1173,9 +1173,9 @@ QPushButton:pressed {
    <widget class="QPushButton" name="btn_cancel">
     <property name="geometry">
      <rect>
-      <x>665</x>
+      <x>640</x>
       <y>520</y>
-      <width>80</width>
+      <width>71</width>
       <height>30</height>
      </rect>
     </property>
@@ -1203,12 +1203,12 @@ QPushButton:pressed {
      <string>退出</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_onlyapply">
+   <widget class="QPushButton" name="btn_preview_on_mainWid">
     <property name="geometry">
      <rect>
-      <x>535</x>
+      <x>390</x>
       <y>480</y>
-      <width>90</width>
+      <width>121</width>
       <height>30</height>
      </rect>
     </property>
@@ -1233,15 +1233,15 @@ QPushButton:pressed {
 }</string>
     </property>
     <property name="text">
-     <string>应用</string>
+     <string>在主界面预览</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_save_apply">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>550</x>
       <y>480</y>
-      <width>90</width>
+      <width>111</width>
       <height>30</height>
      </rect>
     </property>
@@ -1359,7 +1359,7 @@ color: pink;</string>
        <x>5</x>
        <y>30</y>
        <width>141</width>
-       <height>195</height>
+       <height>228</height>
       </rect>
      </property>
      <property name="font">
@@ -1472,39 +1472,6 @@ QScrollBar::sub-page:horizontal {
       <number>0</number>
      </property>
     </widget>
-    <widget class="QPushButton" name="btn_preview_theme">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>230</y>
-       <width>60</width>
-       <height>25</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    font: 12pt &quot;宋体&quot;;
-    background-color: rgb(173, 173, 173);
-    color: rgb(85, 0, 255);
-    border: 1px solid rgb(85, 0, 255);
-    border-radius: 4px;
-}
-
-QPushButton:hover {
-    background-color: rgb(193, 193, 193); /* 悬停时的背景颜色 */
-    border: 1px solid rgb(105, 0, 255); /* 悬停时的边框颜色 */
-}
-
-QPushButton:pressed {
-    background-color: rgb(153, 153, 153); /* 按下时的背景颜色 */
-    border: 1px solid rgb(65, 0, 255); /* 按下时的边框颜色 */
-    color: rgb(255, 255, 255); /* 按下时的文字颜色 */
-}</string>
-     </property>
-     <property name="text">
-      <string>预览</string>
-     </property>
-    </widget>
    </widget>
    <widget class="QFrame" name="fra_preview">
     <property name="geometry">
@@ -1598,12 +1565,12 @@ QPushButton:pressed {
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="btn_resume">
+   <widget class="QPushButton" name="btn_cancel_preview_on_mainWid">
     <property name="geometry">
      <rect>
-      <x>535</x>
+      <x>390</x>
       <y>520</y>
-      <width>90</width>
+      <width>121</width>
       <height>30</height>
      </rect>
     </property>
@@ -1628,7 +1595,7 @@ QPushButton:pressed {
 }</string>
     </property>
     <property name="text">
-     <string>恢复主题</string>
+     <string>取消主题预览</string>
     </property>
    </widget>
   </widget>
