@@ -47,11 +47,11 @@
 
 1. [下载exe](https://github.com/zjmllx/qssCodeEditor/releases)
 
-2. 打开一个已有的QSS文件或创建新的QSS文件。
+2. 打开一个已有的qss或者txt、json、css等文本文件。
 
-3. 使用编辑器修改QSS文件，实时预览将随修改即时更新。
+3. 使用编辑器修改文件内容，右侧可实时预览修改效果。
 
-4. 保存修改以应用到Qt应用程序中。
+4. 导出qss文件。
 
 ## 贡献
 
